@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Keep.Common", "src\Keep.Common\Keep.Common.csproj", "{85692140-2F71-4E4E-9313-745931C64882}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keep.ZooProxy", "src\Keep.ZooProxy\Keep.ZooProxy.csproj", "{C49FE84F-0EAB-4CBA-A064-1CF0F9FB872B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02B29A0F-F45C-4791-A5B4-DE3FA964840E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "demos", "demos", "{CD8B36FD-5176-4F86-A289-305291A16654}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.ZooProxy", "demos\Demo.ZooProxy\Demo.ZooProxy.csproj", "{7F04F133-0D20-4B96-9EBA-01B4EE72D5D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A1902683-609D-4FB8-A7C6-719C9F70C0A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keep.ZooProxy.Tests", "tests\Keep.ZooProxy.Tests\Keep.ZooProxy.Tests.csproj", "{3B23437B-F110-4AE6-8920-213113F83AC6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85692140-2F71-4E4E-9313-745931C64882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85692140-2F71-4E4E-9313-745931C64882}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85692140-2F71-4E4E-9313-745931C64882}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85692140-2F71-4E4E-9313-745931C64882}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C49FE84F-0EAB-4CBA-A064-1CF0F9FB872B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C49FE84F-0EAB-4CBA-A064-1CF0F9FB872B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C49FE84F-0EAB-4CBA-A064-1CF0F9FB872B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C49FE84F-0EAB-4CBA-A064-1CF0F9FB872B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F04F133-0D20-4B96-9EBA-01B4EE72D5D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F04F133-0D20-4B96-9EBA-01B4EE72D5D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F04F133-0D20-4B96-9EBA-01B4EE72D5D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F04F133-0D20-4B96-9EBA-01B4EE72D5D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B23437B-F110-4AE6-8920-213113F83AC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B23437B-F110-4AE6-8920-213113F83AC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B23437B-F110-4AE6-8920-213113F83AC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B23437B-F110-4AE6-8920-213113F83AC6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{85692140-2F71-4E4E-9313-745931C64882} = {02B29A0F-F45C-4791-A5B4-DE3FA964840E}
+		{C49FE84F-0EAB-4CBA-A064-1CF0F9FB872B} = {02B29A0F-F45C-4791-A5B4-DE3FA964840E}
+		{7F04F133-0D20-4B96-9EBA-01B4EE72D5D2} = {CD8B36FD-5176-4F86-A289-305291A16654}
+		{3B23437B-F110-4AE6-8920-213113F83AC6} = {A1902683-609D-4FB8-A7C6-719C9F70C0A3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95FF18C3-3186-4BF1-91B0-AB4894CA370E}
+	EndGlobalSection
+EndGlobal
