@@ -1,10 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Keep.Common
+namespace Keep.Common.Framework
 {
     public abstract class PluginBase<TOptions> : IPlugin where TOptions : class
     {
