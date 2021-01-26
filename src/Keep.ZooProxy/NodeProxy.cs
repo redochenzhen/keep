@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Keep.ZooProxy
 {
-    internal partial class NodeProxy : INode
+    internal partial class NodeProxy : INodeProxy
     {
         private readonly ZooKeeperClient _zkClient;
         private NodeWatcher _watcher;
@@ -142,23 +142,23 @@ namespace Keep.ZooProxy
             await Connection.setACLAsync(Path, acl, aver).ConfigureAwait(false);
         }
 
-        public async Task<INode> ProxyNodeAsync(string name, bool watch)
+        public async Task<INodeProxy> ProxyNodeAsync(string name, bool watch)
         {
             return await _zkClient.ProxyNodeAsync(name, watch, Path).ConfigureAwait(false);
         }
 
-        public async Task<IDataNode<T>> ProxyValueNodeAsync<T>(string name, bool watch)
+        public async Task<IDataNodeProxy<T>> ProxyValueNodeAsync<T>(string name, bool watch)
         {
             return await _zkClient.ProxyValueNodeAsync<T>(name, watch, Path).ConfigureAwait(false);
         }
 
-        public async Task<IDataNode<T>> ProxyJsonNodeAsync<T>(string name, bool watch) where T : class
+        public async Task<IDataNodeProxy<T>> ProxyJsonNodeAsync<T>(string name, bool watch) where T : class
         {
 
             return await _zkClient.ProxyJsonNodeAsync<T>(name, watch, Path).ConfigureAwait(false);
         }
 
-        public async Task<IPropertyNode> ProxyPropertyNodeAsync(string name, bool watch)
+        public async Task<IPropertyNodeProxy> ProxyPropertyNodeAsync(string name, bool watch)
         {
             return await _zkClient.ProxyPropertyNodeAsync(name, watch, Path).ConfigureAwait(false);
         }

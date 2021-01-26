@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Keep.ZooProxy
 {
-    internal class ValueNodeProxy<T> : DataNodeProxy<T>, IDataNode<T>
+    internal class ValueNodeProxy<T> : DataNodeProxy<T>, IDataNodeProxy<T>
     {
         public ValueNodeProxy(ZooKeeperClient zkClient, string name, string path) : base(zkClient, name, path) { }
 

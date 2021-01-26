@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Keep.ZooProxy
 {
-    internal abstract partial class DataNodeProxy<T> : NodeProxy, IDataNode<T>
+    internal abstract partial class DataNodeProxy<T> : NodeProxy, IDataNodeProxy<T>
     {
         public event EventHandler<DataChangedEventArgs<T>> DataChanged;
 

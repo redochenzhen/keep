@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
-using System.Text.Json;
 using org.apache.zookeeper;
 
 namespace Keep.ZooProxy
 {
-    public partial class ZooKeeperClient : INodeProxy, IDisposable
+    public partial class ZooKeeperClient : INodeProxyFactory, IDisposable
     {
         private const int DEFAULT_CONNECTION_TIMEOUT_MS = 20000;
         private const int DEFAULT_SESSION_TIMEOUT_MS = 20000;
@@ -91,7 +88,7 @@ namespace Keep.ZooProxy
         /// <param name="name">ZNode的名称</param>
         /// <param name="watch">是否监听该ZNode</param>
         /// <returns></returns>
-        public async Task<INode> ProxyNodeAsync(string name, bool watch = false, string parentPath = default)
+        public async Task<INodeProxy> ProxyNodeAsync(string name, bool watch = false, string parentPath = default)
         {
             var path = NodeProxy.JoinPath(parentPath, name);
             var node = new NodeProxy(this, name, path);
@@ -103,7 +100,7 @@ namespace Keep.ZooProxy
             return node;
         }
 
-        public async Task<IDataNode<T>> ProxyValueNodeAsync<T>(string name, bool watch = false, string parentPath = default)
+        public async Task<IDataNodeProxy<T>> ProxyValueNodeAsync<T>(string name, bool watch = false, string parentPath = default)
         {
             var path = NodeProxy.JoinPath(parentPath, name);
             DataNodeProxy<T> node;
@@ -123,7 +120,7 @@ namespace Keep.ZooProxy
             return node;
         }
 
-        public async Task<IDataNode<T>> ProxyJsonNodeAsync<T>(string name, bool watch = false, string parentPath = default) where T : class
+        public async Task<IDataNodeProxy<T>> ProxyJsonNodeAsync<T>(string name, bool watch = false, string parentPath = default) where T : class
         {
             var path = NodeProxy.JoinPath(parentPath, name);
             var node = new JsonNodeProxy<T>(this, name, path);
@@ -135,7 +132,7 @@ namespace Keep.ZooProxy
             return node;
         }
 
-        public async Task<IPropertyNode> ProxyPropertyNodeAsync(string name, bool watch = false, string parentPath = default)
+        public async Task<IPropertyNodeProxy> ProxyPropertyNodeAsync(string name, bool watch = false, string parentPath = default)
         {
             var path = NodeProxy.JoinPath(parentPath, name);
             var node = new PropertyNodeProxy(this, name, path);

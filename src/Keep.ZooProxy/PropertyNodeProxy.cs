@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Keep.ZooProxy
 {
-    internal class PropertyNodeProxy : NodeProxy, IPropertyNode
+    internal class PropertyNodeProxy : NodeProxy, IPropertyNodeProxy
     {
         public event EventHandler<PropertyChangedEventArgs> PropertyChanged;
 

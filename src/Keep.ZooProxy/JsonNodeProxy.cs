@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Keep.ZooProxy
 {
-    internal class JsonNodeProxy<T> : DataNodeProxy<T>, IDataNode<T> where T : class
+    internal class JsonNodeProxy<T> : DataNodeProxy<T>, IDataNodeProxy<T> where T : class
     {
         public JsonNodeProxy(ZooKeeperClient zkClient, string name, string path) : base(zkClient, name, path) { }
 

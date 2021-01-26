@@ -1,11 +1,10 @@
-﻿using org.apache.zookeeper;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Keep.ZooProxy
 {
-    public interface INode : ISubNodeProxy
+    public interface INodeProxy : ISubNodeProxyFactory
     {
         string Path { get; }
 
@@ -34,7 +33,7 @@ namespace Keep.ZooProxy
         Task BindAnyoneAsync(Permission permission = Permission.Read);
     }
 
-    public interface IDataNode<T> : INode
+    public interface IDataNodeProxy<T> : INodeProxy
     {
         event EventHandler<DataChangedEventArgs<T>> DataChanged;
 
@@ -47,7 +46,7 @@ namespace Keep.ZooProxy
         Task SetDataAsync(T data);
     }
 
-    public interface IPropertyNode : INode
+    public interface IPropertyNodeProxy : INodeProxy
     {
         event EventHandler<PropertyChangedEventArgs> PropertyChanged;
 
