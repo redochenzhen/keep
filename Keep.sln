@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Keep.Common", "src\Keep.Common\Keep.Common.csproj", "{85692140-2F71-4E4E-9313-745931C64882}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keep.ZooProxy", "src\Keep.ZooProxy\Keep.ZooProxy.csproj", "{C49FE84F-0EAB-4CBA-A064-1CF0F9FB872B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Keep.ZooProxy", "src\Keep.ZooProxy\Keep.ZooProxy.csproj", "{C49FE84F-0EAB-4CBA-A064-1CF0F9FB872B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02B29A0F-F45C-4791-A5B4-DE3FA964840E}"
 EndProject
@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.ZooProxy", "demos\Demo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A1902683-609D-4FB8-A7C6-719C9F70C0A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keep.ZooProxy.Tests", "tests\Keep.ZooProxy.Tests\Keep.ZooProxy.Tests.csproj", "{3B23437B-F110-4AE6-8920-213113F83AC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Keep.ZooProxy.Tests", "tests\Keep.ZooProxy.Tests\Keep.ZooProxy.Tests.csproj", "{3B23437B-F110-4AE6-8920-213113F83AC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keep.Common.Tests", "Keep.Common.Tests\Keep.Common.Tests.csproj", "{D7E4B5C1-64DC-4C96-BD43-448AD584369F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{3B23437B-F110-4AE6-8920-213113F83AC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B23437B-F110-4AE6-8920-213113F83AC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B23437B-F110-4AE6-8920-213113F83AC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7E4B5C1-64DC-4C96-BD43-448AD584369F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7E4B5C1-64DC-4C96-BD43-448AD584369F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7E4B5C1-64DC-4C96-BD43-448AD584369F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7E4B5C1-64DC-4C96-BD43-448AD584369F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +54,7 @@ Global
 		{C49FE84F-0EAB-4CBA-A064-1CF0F9FB872B} = {02B29A0F-F45C-4791-A5B4-DE3FA964840E}
 		{7F04F133-0D20-4B96-9EBA-01B4EE72D5D2} = {CD8B36FD-5176-4F86-A289-305291A16654}
 		{3B23437B-F110-4AE6-8920-213113F83AC6} = {A1902683-609D-4FB8-A7C6-719C9F70C0A3}
+		{D7E4B5C1-64DC-4C96-BD43-448AD584369F} = {A1902683-609D-4FB8-A7C6-719C9F70C0A3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {95FF18C3-3186-4BF1-91B0-AB4894CA370E}
