@@ -9,6 +9,8 @@ namespace Keep.Common.Http
 {
     public class TimeoutHandler : DelegatingHandler
     {
+        public const string TIMEOUT_KEY = "X-RequestTimeout";
+
         public TimeSpan DefaultTimeout { get; set; } = TimeSpan.FromSeconds(100);
 
         public static TimeoutHandler Create(HttpMessageHandler innerHandler = default)
@@ -20,14 +22,18 @@ namespace Keep.Common.Http
         }
 
         protected async override Task<HttpResponseMessage> SendAsync(
-            HttpRequestMessage request,
+            HttpRequestMessage httpRequestMessage,
             CancellationToken cancellationToken)
         {
-            using (var cts = GetCancellationTokenSource(request, cancellationToken))
+            if (httpRequestMessage == null)
+            {
+                throw new ArgumentNullException(nameof(httpRequestMessage));
+            }
+            using (var cts = GetCancellationTokenSource(httpRequestMessage, cancellationToken))
             {
                 try
                 {
-                    return await base.SendAsync(request, cts?.Token ?? cancellationToken);
+                    return await base.SendAsync(httpRequestMessage, cts?.Token ?? cancellationToken);
                 }
                 catch (TaskCanceledException)
                 when (!cancellationToken.IsCancellationRequested)
@@ -42,6 +48,8 @@ namespace Keep.Common.Http
             CancellationToken cancellationToken)
         {
             var timeout = request.GetTimeout() ?? DefaultTimeout;
+            if (timeout == default) timeout = DefaultTimeout;
+            else if (timeout == Timeout.InfiniteTimeSpan) return null;
             var cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
             cts.CancelAfter(timeout);
             return cts;

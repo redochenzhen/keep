@@ -7,8 +7,6 @@ namespace Keep.Common.Http
 {
     public static class HttpRequestMessageExts
     {
-        private const string TIMEOUT_KEY = "X-RequestTimeout";
-
         public static void SetTimeout(this HttpRequestMessage request, TimeSpan timeout, bool force = false)
         {
             if (request == null)
@@ -16,9 +14,9 @@ namespace Keep.Common.Http
                 throw new ArgumentNullException(nameof(request));
             }
 
-            if (force || !request.Properties.ContainsKey(TIMEOUT_KEY))
+            if (force || !request.Properties.ContainsKey(TimeoutHandler.TIMEOUT_KEY))
             {
-                request.Properties[TIMEOUT_KEY] = timeout;
+                request.Properties[TimeoutHandler.TIMEOUT_KEY] = timeout;
             }
         }
 
@@ -29,7 +27,7 @@ namespace Keep.Common.Http
                 throw new ArgumentNullException(nameof(request));
             }
 
-            if (!request.Properties.TryGetValue(TIMEOUT_KEY, out var value)) return null;
+            if (!request.Properties.TryGetValue(TimeoutHandler.TIMEOUT_KEY, out var value)) return null;
             if (!(value is TimeSpan timeout)) return null;
             return timeout;
         }
