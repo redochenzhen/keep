@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Keep.Common\Keep.Common.csproj" />
+    <ProjectReference Include="..\..\src\Keep.Common\Keep.Common.csproj" />
   </ItemGroup>
 
 </Project>
